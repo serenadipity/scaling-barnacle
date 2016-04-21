@@ -31,13 +31,17 @@ var balls = [];
 var main = function() {
     console.log("hi");
     var ball1 = Ball();
+    var ball2 = Ball();
     balls.push(ball1);
-    console.log(balls);
-    //balls[0].incX;
-    ctx.beginPath();
-    ctx.arc(ball1.x, ball1.y,50,0,2*Math.PI);
-    ctx.stroke();
-    ctx.fill();
+    balls.push(ball2);
+    for (i=0; i<balls.length; i++) {
+	ctx.beginPath();
+	ctx.arc(balls[i].getX(),balls[i].getY(),50,0,2*Math.PI);
+	ctx.stroke();
+	ctx.fill();
+    }
+    
+  
 };
 
 
