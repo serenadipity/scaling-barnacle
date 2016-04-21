@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> HW #3 </title>
+</head>
+
+<body>
+	<h1>SoftDev HW #3</h1>
+
+	<canvas height="538" width="538" id="dotanim">
+	</canvas>
+
+	<!--<button id="clear">Clear</button>-->
+	<button id="dotButton">Start</button>
+	<button id="stopButton">Stop</button>
+	<button id="dvdButton">DVD</button>
+	
+	<script src="animate.js"></script>
+
+</body>
+
+</html>
