@@ -24,7 +24,7 @@ var Ball = function() {
 
     var draw=function(ex,wy) {
 	ctx.beginPath();
-	ctx.arc(ex,wy,50,0,2*Math.PI);
+	ctx.arc(ex,wy,10,0,2*Math.PI);
 	ctx.stroke();
 	ctx.fill();
     }
@@ -56,6 +56,10 @@ var Ball = function() {
 };
 
 balls=[];
+var ball1 = Ball();
+ball1.draw(c.width/2, c.height/2);
+balls.push(ball1);
+
 var startMove = function() {
     var animate = function() {
 	ctx.clearRect(0, 0, c.width, c.height);
@@ -65,4 +69,11 @@ var startMove = function() {
 	id=window.requestAnimationFrame(animate);
     }
     var id=window.requestAnimationFrame(animate);
+}
+
+document.getElementById("start").onclick = startMove();
+document.getElementById("add").onclick = function newBall() {
+	var x = Ball();
+	x.draw(((Math.random() * 500) + 1), ((Math.random() * 500) + 1));
+	balls.push(x);
 }
