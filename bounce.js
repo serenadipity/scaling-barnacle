@@ -11,7 +11,7 @@ var Ball = function() {
     //var x =480;
     //var y = c.height/2;
     var y=Math.floor((Math.random() * 500) + 1);
-
+    
     var dx=5;
     var dy=5;
         
@@ -21,8 +21,9 @@ var Ball = function() {
     var getY = function() {return y;}
     var decX = function() {x=x-1;}
     var decY = function() {y=y-1;}
-
+    
     var draw=function(ex,wy) {
+	ctx.fillStyle=this.color;
 	ctx.beginPath();
 	ctx.arc(ex,wy,10,0,2*Math.PI);
 	ctx.stroke();
@@ -42,7 +43,7 @@ var Ball = function() {
 	y=y+dy;
 	draw(x,y);
     }
-	    
+    
     return {
 	incX : incX,
 	decX : decX,
@@ -57,7 +58,7 @@ var Ball = function() {
 
 balls=[];
 var ball1 = Ball();
-ball1.draw(c.width/2, c.height/2);
+//ball1.draw(c.width/2, c.height/2);
 balls.push(ball1);
 
 var startMove = function() {
@@ -73,7 +74,7 @@ var startMove = function() {
 
 document.getElementById("start").onclick = startMove();
 document.getElementById("add").onclick = function newBall() {
-	var x = Ball();
-	x.draw(((Math.random() * 500) + 1), ((Math.random() * 500) + 1));
-	balls.push(x);
+    var x = Ball();
+	//x.draw(((Math.random() * 500) + 1), ((Math.random() * 500) + 1));
+    balls.push(x);
 }
